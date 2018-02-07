@@ -1,0 +1,32 @@
+<form [formGroup]="premiseForm" (submit)="save()">
+  <mat-form-field>
+    <input type="text" formControlName="character" matInput placeholder="Who is your character?">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="text" formControlName="situation" matInput
+           placeholder="What is your initial situation? (place, date, …)">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="text" formControlName="objective" matInput placeholder="What is your character's objective?">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="text" formControlName="opponent" matInput placeholder="Who is your character's opponent?">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="text" formControlName="disaster" matInput
+           placeholder="What is the disaster that will bring an end to your character's initial situation?">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea formControlName="fullPremise" matInput placeholder="Enter your full premise here"></textarea>
+  </mat-form-field>
+
+  <section class="buttons">
+    <button mat-button color="warn" type="button" (click)="resetForm()">Cancel</button>
+    <button mat-raised-button type="submit">Save</button>
+  </section>
+</form>

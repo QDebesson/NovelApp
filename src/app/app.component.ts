@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+import { NovelService } from './novel-manager/services/novel.service';
+import * as _ from 'lodash';
 
 @Component({
-  selector: 'app-root',
+  selector: 'nov-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  constructor(private _novelService: NovelService) {
+  }
+
+  hasNovelSelected() {
+    return !_.isNil(this._novelService.currentNovel);
+  }
 }

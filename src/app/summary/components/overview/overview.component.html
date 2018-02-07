@@ -1,0 +1,14 @@
+<form [formGroup]="overviewForm" (submit)="save()">
+  <mat-form-field>
+    <input type="text" formControlName="title" matInput placeholder="Your novel's title" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="text" formControlName="subtitle" matInput placeholder="Your novel's subtitle">
+  </mat-form-field>
+
+  <section class="buttons">
+    <button mat-button color="warn" type="button" (click)="resetForm()">Cancel</button>
+    <button mat-raised-button type="submit">Save</button>
+  </section>
+</form>

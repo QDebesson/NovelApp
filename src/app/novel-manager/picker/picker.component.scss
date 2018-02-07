@@ -1,0 +1,11 @@
+section.picker {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  padding: 1rem;
+}
+section.actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}

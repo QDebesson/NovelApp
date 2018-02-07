@@ -1,0 +1,13 @@
+mat-sidenav-container {
+  height: 100vh;
+}
+
+mat-sidenav {
+  border-right: 1px solid rgba(0,0,0,.12);
+}
+
+.mat-nav-list a.active {
+  background: rgba(103, 58, 183, 1);
+  color: white;
+  font-style: italic;
+}

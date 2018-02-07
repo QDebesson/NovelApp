@@ -1,0 +1,8 @@
+<mat-tab-group>
+  <mat-tab label="Overview">
+    <nov-overview [summary]="summary"></nov-overview>
+  </mat-tab>
+  <mat-tab label="Premise">
+    <nov-premise [premise]="summary?.premise" (premiseEmitter)="savePremise($event)"></nov-premise>
+  </mat-tab>
+</mat-tab-group>
