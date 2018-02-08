@@ -34,6 +34,15 @@ export class SummaryComponent implements OnInit, OnDestroy {
 
   savePremise(premise: Premise) {
     this.summary.premise = premise;
+    this._save();
+  }
+
+  saveOverview(summary: Summary) {
+    this.summary = summary;
+    this._save();
+  }
+
+  private _save() {
     this._summaryService.saveSummary((this._novelService.currentNovel !).id, this.summary).subscribe(() => {
     }, () => {
     });

@@ -3,6 +3,8 @@ export interface Summary {
   id: string;
   title: string;
   subtitle: string;
+  startDate: string;
+  [key: string]: string | Premise;
 }
 
 export interface Premise {

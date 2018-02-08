@@ -31,7 +31,7 @@ export class PremiseComponent implements OnInit, OnChanges {
     this._buildForm();
   }
 
-  _buildForm() {
+  private _buildForm() {
     this.premiseForm = this._fb.group({
       character: [this._getValueOfPremise('character')],
       situation: [this._getValueOfPremise('situation')],
@@ -42,7 +42,7 @@ export class PremiseComponent implements OnInit, OnChanges {
     });
   }
 
-  _getValueOfPremise(fieldName: string): string {
+  private _getValueOfPremise(fieldName: string): string {
     if (this.premise && this.premise.hasOwnProperty(fieldName)) {
       return this.premise[fieldName];
     }

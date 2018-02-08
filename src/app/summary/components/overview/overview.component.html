@@ -7,6 +7,14 @@
     <input type="text" formControlName="subtitle" matInput placeholder="Your novel's subtitle">
   </mat-form-field>
 
+  <mat-form-field>
+    <input type="date" formControlName="startDate" matInput placeholder="Your novel's starting date">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="date" formControlName="targetedEndDate" matInput placeholder="Your novel's estimated end date">
+  </mat-form-field>
+
   <section class="buttons">
     <button mat-button color="warn" type="button" (click)="resetForm()">Cancel</button>
     <button mat-raised-button type="submit">Save</button>

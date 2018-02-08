@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatFormFieldModule, MatInputModule, MatTabsModule } from '@angular/material';
 import { SummaryService } from './summary.service';
@@ -16,7 +16,7 @@ import { OverviewComponent } from './components/overview/overview.component';
     MatButtonModule,
     MatInputModule
   ],
-  providers: [SummaryService],
+  providers: [SummaryService, DatePipe],
   declarations: [SummaryComponent, PremiseComponent, OverviewComponent]
 })
 export class SummaryModule { }

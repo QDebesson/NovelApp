@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { NovelService } from '../novel-manager/services/novel.service';
 import { Summary } from './models/summary';
