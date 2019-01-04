@@ -9,9 +9,9 @@ import { Premise } from '../../models/summary';
 })
 export class PremiseComponent implements OnInit, OnChanges {
 
-  @Input() premise: Premise;
+  @Input() premise!: Premise;
   @Output() premiseEmitter: EventEmitter<Premise> = new EventEmitter<Premise>();
-  premiseForm: FormGroup;
+  premiseForm!: FormGroup;
 
   constructor(private _fb: FormBuilder) {
   }

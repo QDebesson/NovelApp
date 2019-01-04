@@ -4,6 +4,7 @@ export interface Summary {
   title: string;
   subtitle: string;
   startDate: string;
+
   [key: string]: string | Premise;
 }
 
@@ -14,5 +15,6 @@ export interface Premise {
   opponent: string;
   disaster: string;
   fullPremise: string;
+
   [key: string]: string;
 }

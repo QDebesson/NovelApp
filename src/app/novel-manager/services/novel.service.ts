@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { Novel } from '../models/novel';
@@ -12,6 +11,10 @@ export class NovelService {
   private _novelsSubject: BehaviorSubject<Array<Novel>> = new BehaviorSubject<Array<Novel>>([]);
   private _novelSubject: BehaviorSubject<Novel | null> = new BehaviorSubject<Novel | null>(null);
 
+  constructor(private _http: HttpClient) {
+    this.getNovels();
+  }
+
   get novels() {
     return this._novelsSubject.asObservable();
   }
@@ -20,16 +23,12 @@ export class NovelService {
     return this._novelSubject.getValue();
   }
 
-  get currentNovelAsObservable() {
-    return this._novelSubject.asObservable();
-  }
-
   set currentNovel(novel) {
     this._novelSubject.next(novel);
   }
 
-  constructor(private _http: HttpClient) {
-    this.getNovels();
+  get currentNovelAsObservable() {
+    return this._novelSubject.asObservable();
   }
 
   getNovels() {

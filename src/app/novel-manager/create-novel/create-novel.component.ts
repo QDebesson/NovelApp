@@ -11,7 +11,7 @@ import { NovelService } from '../services/novel.service';
 })
 export class CreateNovelComponent implements OnInit {
   errorMessage = '';
-  novelForm: FormGroup;
+  novelForm: FormGroup = this._fb.group({});
 
   constructor(private _dialogRef: MatDialogRef<DeleteNovelComponent>, private _novelService: NovelService, private _fb: FormBuilder) {
   }

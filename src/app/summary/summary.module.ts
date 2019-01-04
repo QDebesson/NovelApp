@@ -19,4 +19,5 @@ import { OverviewComponent } from './components/overview/overview.component';
   providers: [SummaryService, DatePipe],
   declarations: [SummaryComponent, PremiseComponent, OverviewComponent]
 })
-export class SummaryModule { }
+export class SummaryModule {
+}

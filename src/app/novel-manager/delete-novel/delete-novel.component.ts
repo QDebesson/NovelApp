@@ -21,7 +21,7 @@ export class DeleteNovelComponent {
       this._router.navigate(['']);
       this._dialogRef.close();
     }, () => {
-        this.errorMessage = 'An error occurred…';
+      this.errorMessage = 'An error occurred…';
     });
   }
 }

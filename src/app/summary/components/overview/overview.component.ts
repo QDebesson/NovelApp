@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Summary } from '../../models/summary';
 
@@ -8,16 +8,13 @@ import { Summary } from '../../models/summary';
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss']
 })
-export class OverviewComponent implements OnInit, OnChanges {
+export class OverviewComponent implements OnChanges {
 
-  @Input() summary: Summary;
+  @Input() summary!: Summary;
   @Output() overviewEmitter: EventEmitter<Summary> = new EventEmitter<Summary>();
-  overviewForm: FormGroup;
+  overviewForm!: FormGroup;
 
   constructor(private _fb: FormBuilder, private _datePipe: DatePipe) {
-  }
-
-  ngOnInit() {
   }
 
   ngOnChanges() {

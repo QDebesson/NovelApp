@@ -1,8 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { switchMap, tap } from 'rxjs/operators';
-import { Subscription } from 'rxjs/Subscription';
-import { Novel } from '../../../novel-manager/models/novel';
+import { switchMap } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { NovelService } from '../../../novel-manager/services/novel.service';
 import { Premise, Summary } from '../../models/summary';
 import { SummaryService } from '../../summary.service';
@@ -13,8 +11,8 @@ import { SummaryService } from '../../summary.service';
   styleUrls: ['./summary.component.scss']
 })
 export class SummaryComponent implements OnInit, OnDestroy {
-  private _summarySubscription: Subscription;
-  summary: Summary;
+  summary?: Summary;
+  private _summarySubscription?: Subscription;
 
   constructor(private _summaryService: SummaryService, private _novelService: NovelService) {
   }
@@ -29,12 +27,16 @@ export class SummaryComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this._summarySubscription.unsubscribe();
+    if (this._summarySubscription) {
+      this._summarySubscription.unsubscribe();
+    }
   }
 
   savePremise(premise: Premise) {
-    this.summary.premise = premise;
-    this._save();
+    if (this.summary) {
+      this.summary.premise = premise;
+      this._save();
+    }
   }
 
   saveOverview(summary: Summary) {
@@ -43,8 +45,6 @@ export class SummaryComponent implements OnInit, OnDestroy {
   }
 
   private _save() {
-    this._summaryService.saveSummary((this._novelService.currentNovel !).id, this.summary).subscribe(() => {
-    }, () => {
-    });
+    this._summaryService.saveSummary((this._novelService.currentNovel !).id, this.summary!).subscribe();
   }
 }

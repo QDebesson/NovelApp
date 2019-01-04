@@ -26,4 +26,5 @@ import { CreateNovelComponent } from './create-novel/create-novel.component';
   exports: [PickerComponent],
   entryComponents: [DeleteNovelComponent, CreateNovelComponent]
 })
-export class NovelManagerModule { }
+export class NovelManagerModule {
+}

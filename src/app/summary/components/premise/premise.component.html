@@ -1,24 +1,25 @@
-<form [formGroup]="premiseForm" (submit)="save()">
+<form (submit)="save()" [formGroup]="premiseForm">
   <mat-form-field>
-    <input type="text" formControlName="character" matInput placeholder="Who is your character?">
+    <input formControlName="character" matInput placeholder="Who is your character?" type="text">
   </mat-form-field>
 
   <mat-form-field>
-    <input type="text" formControlName="situation" matInput
-           placeholder="What is your initial situation? (place, date, …)">
+    <input formControlName="situation" matInput placeholder="What is your initial situation? (place, date, …)"
+           type="text">
   </mat-form-field>
 
   <mat-form-field>
-    <input type="text" formControlName="objective" matInput placeholder="What is your character's objective?">
+    <input formControlName="objective" matInput placeholder="What is your character's objective?" type="text">
   </mat-form-field>
 
   <mat-form-field>
-    <input type="text" formControlName="opponent" matInput placeholder="Who is your character's opponent?">
+    <input formControlName="opponent" matInput placeholder="Who is your character's opponent?" type="text">
   </mat-form-field>
 
   <mat-form-field>
-    <input type="text" formControlName="disaster" matInput
-           placeholder="What is the disaster that will bring an end to your character's initial situation?">
+    <input formControlName="disaster" matInput
+           placeholder="What is the disaster that will bring an end to your character's initial situation?"
+           type="text">
   </mat-form-field>
 
   <mat-form-field>
@@ -26,7 +27,7 @@
   </mat-form-field>
 
   <section class="buttons">
-    <button mat-button color="warn" type="button" (click)="resetForm()">Cancel</button>
+    <button (click)="resetForm()" color="warn" mat-button type="button">Cancel</button>
     <button mat-raised-button type="submit">Save</button>
   </section>
 </form>

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { CreateNovelComponent } from '../create-novel/create-novel.component';
 import { DeleteNovelComponent } from '../delete-novel/delete-novel.component';
 import { Novel } from '../models/novel';
@@ -11,7 +11,12 @@ import { NovelService } from '../services/novel.service';
   templateUrl: './picker.component.html',
   styleUrls: ['./picker.component.scss']
 })
-export class PickerComponent implements OnInit {
+export class PickerComponent {
+
+  novelList: Observable<Array<Novel>> = this._novelService.novels;
+
+  constructor(private _novelService: NovelService, private _dialogService: MatDialog) {
+  }
 
   get selectedNovel(): Novel | null {
     return this._novelService.currentNovel;
@@ -19,15 +24,6 @@ export class PickerComponent implements OnInit {
 
   set selectedNovel(value: Novel | null) {
     this._novelService.currentNovel = value;
-  }
-
-  novelList: Observable<Array<Novel>>;
-
-  constructor(private _novelService: NovelService, private _dialogService: MatDialog) {
-  }
-
-  ngOnInit() {
-    this.novelList = this._novelService.novels;
   }
 
   deleteCurrentNovel() {

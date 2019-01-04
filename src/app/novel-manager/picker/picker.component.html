@@ -1,16 +1,16 @@
 <section class="picker">
   <mat-form-field>
-    <mat-select placeholder="Select a novel" [(ngModel)]="selectedNovel">
+    <mat-select [(ngModel)]="selectedNovel" placeholder="Select a novel">
       <mat-option *ngFor="let novel of novelList | async" [value]="novel">{{ novel.title }}</mat-option>
     </mat-select>
     <mat-hint>{{ selectedNovel?.subtitle }}</mat-hint>
   </mat-form-field>
 
   <section class="actions">
-    <button mat-mini-fab color="warn" (click)="deleteCurrentNovel()" [disabled]="!selectedNovel">
+    <button (click)="deleteCurrentNovel()" [disabled]="!selectedNovel" color="warn" mat-mini-fab>
       <mat-icon>delete</mat-icon>
     </button>
-    <button mat-mini-fab color="primary" (click)="createNewNovel()" >
+    <button (click)="createNewNovel()" color="primary" mat-mini-fab>
       <mat-icon>add</mat-icon>
     </button>
   </section>

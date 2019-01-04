@@ -1,22 +1,22 @@
-<form [formGroup]="overviewForm" (submit)="save()">
+<form (submit)="save()" [formGroup]="overviewForm">
   <mat-form-field>
-    <input type="text" formControlName="title" matInput placeholder="Your novel's title" required>
+    <input formControlName="title" matInput placeholder="Your novel's title" required type="text">
   </mat-form-field>
 
   <mat-form-field>
-    <input type="text" formControlName="subtitle" matInput placeholder="Your novel's subtitle">
+    <input formControlName="subtitle" matInput placeholder="Your novel's subtitle" type="text">
   </mat-form-field>
 
   <mat-form-field>
-    <input type="date" formControlName="startDate" matInput placeholder="Your novel's starting date">
+    <input formControlName="startDate" matInput placeholder="Your novel's starting date" type="date">
   </mat-form-field>
 
   <mat-form-field>
-    <input type="date" formControlName="targetedEndDate" matInput placeholder="Your novel's estimated end date">
+    <input formControlName="targetedEndDate" matInput placeholder="Your novel's estimated end date" type="date">
   </mat-form-field>
 
   <section class="buttons">
-    <button mat-button color="warn" type="button" (click)="resetForm()">Cancel</button>
+    <button (click)="resetForm()" color="warn" mat-button type="button">Cancel</button>
     <button mat-raised-button type="submit">Save</button>
   </section>
 </form>
