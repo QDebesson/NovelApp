@@ -13,7 +13,7 @@ export class CreateNovelComponent implements OnInit {
   errorMessage = '';
   novelForm: FormGroup = this._fb.group({});
 
-  constructor(private _dialogRef: MatDialogRef<DeleteNovelComponent>, private _novelService: NovelService, private _fb: FormBuilder) {
+  constructor(private _dialogRef: MatDialogRef<CreateNovelComponent>, private _novelService: NovelService, private _fb: FormBuilder) {
   }
 
   ngOnInit(): void {
